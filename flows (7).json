@@ -1,0 +1,752 @@
+[
+    {
+        "id": "c0444fc0620491b2",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9a9058ed4378e957",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": "15",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "be763fd2e6265b6d",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d6a274e7c2722fcd",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "bda3326edfaa07ba",
+        "type": "ui_group",
+        "name": "Temperature and Humidity",
+        "tab": "be763fd2e6265b6d",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "91c51b64eee980fc",
+        "type": "mqtt in",
+        "z": "c0444fc0620491b2",
+        "name": "",
+        "topic": "iotfrontier/humidity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9a9058ed4378e957",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 290,
+        "y": 260,
+        "wires": [
+            [
+                "b28be90b3efb14f3",
+                "6c43076735c70ffb",
+                "8fbf4d799750ec18",
+                "f78b99dd194938ca"
+            ]
+        ]
+    },
+    {
+        "id": "3116e2189196692e",
+        "type": "mqtt in",
+        "z": "c0444fc0620491b2",
+        "name": "",
+        "topic": "iotfrontier/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9a9058ed4378e957",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 600,
+        "wires": [
+            [
+                "05ef72330ff9381f",
+                "dfdb3037ab0dcbcb",
+                "ded86838eb8da437",
+                "796a17d46503c9dc"
+            ]
+        ]
+    },
+    {
+        "id": "b28be90b3efb14f3",
+        "type": "debug",
+        "z": "c0444fc0620491b2",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "05ef72330ff9381f",
+        "type": "debug",
+        "z": "c0444fc0620491b2",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "6c43076735c70ffb",
+        "type": "ui_gauge",
+        "z": "c0444fc0620491b2",
+        "name": "",
+        "group": "bda3326edfaa07ba",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b303",
+            "#00e6d6",
+            "#3a6acb"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 560,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "dfdb3037ab0dcbcb",
+        "type": "ui_chart",
+        "z": "c0444fc0620491b2",
+        "name": "",
+        "group": "bda3326edfaa07ba",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 590,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3d5f72c10deff3d8",
+        "type": "mqtt in",
+        "z": "c0444fc0620491b2",
+        "name": "",
+        "topic": "iotfrontier/button",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9a9058ed4378e957",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 320,
+        "y": 860,
+        "wires": [
+            [
+                "6e339adb5b7cbeee",
+                "18702892294f3580",
+                "c85e6dba95c4bc8d",
+                "6d3ebf1fd5f372b2"
+            ]
+        ]
+    },
+    {
+        "id": "6e339adb5b7cbeee",
+        "type": "debug",
+        "z": "c0444fc0620491b2",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "18702892294f3580",
+        "type": "ui_led",
+        "z": "c0444fc0620491b2",
+        "order": 2,
+        "group": "bda3326edfaa07ba",
+        "width": 0,
+        "height": 0,
+        "label": "LED",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            },
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": true,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 530,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "8fbf4d799750ec18",
+        "type": "function",
+        "z": "c0444fc0620491b2",
+        "name": "function 1",
+        "func": "msg.headers = {};\nmsg.headers[\"X-Auth-Token\"] = \"BBUS-WuotJaGMC1axSOaSbjOyf6KImjJxxM\";\nmsg.headers[\"Content-Type\"] = \"application/json\";\n\nmsg.payload = {\n    \"humidity\": parseFloat(msg.payload)\n};\n\nmsg.url = \"https://industrial.api.ubidots.com/api/v1.6/devices/esp32_dht\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 380,
+        "wires": [
+            [
+                "b22ab12ddc4b9490"
+            ]
+        ]
+    },
+    {
+        "id": "ded86838eb8da437",
+        "type": "function",
+        "z": "c0444fc0620491b2",
+        "name": "function 2",
+        "func": "msg.headers = {};\nmsg.headers[\"X-Auth-Token\"] = \"BBUS-WuotJaGMC1axSOaSbjOyf6KImjJxxM\";\nmsg.headers[\"Content-Type\"] = \"application/json\";\n\nmsg.payload = {\n    \"temperature\": parseFloat(msg.payload)\n};\n\nmsg.url = \"https://industrial.api.ubidots.com/api/v1.6/devices/esp32_dht\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 680,
+        "wires": [
+            [
+                "d8022f59786bbc49"
+            ]
+        ]
+    },
+    {
+        "id": "c85e6dba95c4bc8d",
+        "type": "function",
+        "z": "c0444fc0620491b2",
+        "name": "function 3",
+        "func": "msg.headers = {};\nmsg.headers[\"X-Auth-Token\"] = \"BBUS-WuotJaGMC1axSOaSbjOyf6KImjJxxM\";\nmsg.headers[\"Content-Type\"] = \"application/json\";\n\nmsg.payload = {\n    \"led\": parseFloat(msg.payload)\n};\n\nmsg.url = \"https://industrial.api.ubidots.com/api/v1.6/devices/esp32_dht\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 980,
+        "wires": [
+            [
+                "f8544bba73b00d45"
+            ]
+        ]
+    },
+    {
+        "id": "b22ab12ddc4b9490",
+        "type": "http request",
+        "z": "c0444fc0620491b2",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 750,
+        "y": 380,
+        "wires": [
+            [
+                "c5d3233b6385363e"
+            ]
+        ]
+    },
+    {
+        "id": "d8022f59786bbc49",
+        "type": "http request",
+        "z": "c0444fc0620491b2",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 790,
+        "y": 680,
+        "wires": [
+            [
+                "d2307f7aae8baea9"
+            ]
+        ]
+    },
+    {
+        "id": "f8544bba73b00d45",
+        "type": "http request",
+        "z": "c0444fc0620491b2",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 730,
+        "y": 980,
+        "wires": [
+            [
+                "77306a9cf7224a17"
+            ]
+        ]
+    },
+    {
+        "id": "c5d3233b6385363e",
+        "type": "debug",
+        "z": "c0444fc0620491b2",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "d2307f7aae8baea9",
+        "type": "debug",
+        "z": "c0444fc0620491b2",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "77306a9cf7224a17",
+        "type": "debug",
+        "z": "c0444fc0620491b2",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "f78b99dd194938ca",
+        "type": "function",
+        "z": "c0444fc0620491b2",
+        "name": "function 4",
+        "func": "msg.headers = {};\nmsg.headers[\"Content-Type\"] = \"application/json\";\n// Usa aquí tu token real, no el ID del dispositivo\nmsg.headers[\"Authorization\"] = \"Bearer Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXYiOiJlc3AzMl9kaHQiLCJpYXQiOjE3NTU5ODM2NjksImp0aSI6IjY4YWEyZjM1MGM4NmQ5MTFlZjA4MjI1ZCIsInN2ciI6InVzLWVhc3QuYXdzLnRoaW5nZXIuaW8iLCJ1c3IiOiJqdWFudmFsZW5jaWFjIn0.vBUvL0NGYnhm2E749nyCjtRP_PjMQNONbC2IGa8Q64k\";  \n\nmsg.payload = {\n    \"humidity\": parseFloat(msg.payload)  // asegúrate de que sea número\n};\n\n// URL correcta de Thinger.io\nmsg.url = \"https://api.thinger.io/v3/users/<juanvalenciac>/devices/esp32_dht/data\";\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 440,
+        "wires": [
+            [
+                "9daa6440e8ab7e27"
+            ]
+        ]
+    },
+    {
+        "id": "796a17d46503c9dc",
+        "type": "function",
+        "z": "c0444fc0620491b2",
+        "name": "function 5",
+        "func": "msg.headers = {};\nmsg.headers[\"Content-Type\"] = \"application/json\";\n// Usa aquí tu token real, no el ID del dispositivo\nmsg.headers[\"Authorization\"] = \"Bearer Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXYiOiJlc3AzMl9kaHQiLCJpYXQiOjE3NTU5ODM2NjksImp0aSI6IjY4YWEyZjM1MGM4NmQ5MTFlZjA4MjI1ZCIsInN2ciI6InVzLWVhc3QuYXdzLnRoaW5nZXIuaW8iLCJ1c3IiOiJqdWFudmFsZW5jaWFjIn0.vBUvL0NGYnhm2E749nyCjtRP_PjMQNONbC2IGa8Q64k\";  \n\nmsg.payload = {\n    \"temperature\": parseFloat(msg.payload)  // asegúrate de que sea número\n};\n\n// URL correcta de Thinger.io\nmsg.url = \"https://api.thinger.io/v3/users/<juanvalenciac>/devices/esp32_dht/data\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 740,
+        "wires": [
+            [
+                "a9db777943d44b45"
+            ]
+        ]
+    },
+    {
+        "id": "6d3ebf1fd5f372b2",
+        "type": "function",
+        "z": "c0444fc0620491b2",
+        "name": "function 6",
+        "func": "msg.headers = {};\nmsg.headers[\"Content-Type\"] = \"application/json\";\n// Usa aquí tu token real, no el ID del dispositivo\nmsg.headers[\"Authorization\"] = \"Bearer Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXYiOiJlc3AzMl9kaHQiLCJpYXQiOjE3NTU5ODM2NjksImp0aSI6IjY4YWEyZjM1MGM4NmQ5MTFlZjA4MjI1ZCIsInN2ciI6InVzLWVhc3QuYXdzLnRoaW5nZXIuaW8iLCJ1c3IiOiJqdWFudmFsZW5jaWFjIn0.vBUvL0NGYnhm2E749nyCjtRP_PjMQNONbC2IGa8Q64k\";  \n\nmsg.payload = {\n    \"led\": parseFloat(msg.payload)  // asegúrate de que sea número\n};\n\n// URL correcta de Thinger.io\nmsg.url = \"https://api.thinger.io/v3/users/<juanvalenciac>/devices/esp32_dht/data\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 1060,
+        "wires": [
+            [
+                "d416f91250e76cdc"
+            ]
+        ]
+    },
+    {
+        "id": "d416f91250e76cdc",
+        "type": "http request",
+        "z": "c0444fc0620491b2",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 730,
+        "y": 1060,
+        "wires": [
+            [
+                "1f442037d41fa5dd"
+            ]
+        ]
+    },
+    {
+        "id": "a9db777943d44b45",
+        "type": "http request",
+        "z": "c0444fc0620491b2",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 790,
+        "y": 740,
+        "wires": [
+            [
+                "f8d6e66ddca86a14"
+            ]
+        ]
+    },
+    {
+        "id": "9daa6440e8ab7e27",
+        "type": "http request",
+        "z": "c0444fc0620491b2",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 750,
+        "y": 440,
+        "wires": [
+            [
+                "c247a4d8f27b390d"
+            ]
+        ]
+    },
+    {
+        "id": "c247a4d8f27b390d",
+        "type": "debug",
+        "z": "c0444fc0620491b2",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "f8d6e66ddca86a14",
+        "type": "debug",
+        "z": "c0444fc0620491b2",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "1f442037d41fa5dd",
+        "type": "debug",
+        "z": "c0444fc0620491b2",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "a1be8a9ba4f378bc",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6",
+            "node-red-contrib-ui-led": "0.4.11"
+        }
+    }
+]
